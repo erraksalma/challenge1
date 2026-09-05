@@ -1,12 +1,13 @@
 var prompt = require('prompt-sync')();
 let n = Number(prompt("Combien d'éléments voulez-vous saisir ?"));
 let tableau = [];
-let somme=0;
-for (let i = 0; i < n; i++)
-{
+for (let i = 0; i < n; i++) {
     let element = Number(prompt("Entrez l'élément " + (i + 1) + " :"));
     tableau.push(element);
-
-    somme = somme + element;
-
-}  console.log("La somme totale est : " + somme);
+}
+let min = tableau[0];
+for (let i = 1; i < tableau.length; i--) {
+    if (tableau[i] < min) {
+        min = tableau[i];
+    }
+}console.log(min);
